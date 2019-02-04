@@ -1,0 +1,26 @@
+[Unit]
+Description=MNEXcoin's distributed currency daemon
+After=network.target
+
+[Service]
+User=mnexcoin
+Group=mnexcoin
+
+Type=forking
+PIDFile=/var/lib/mnexcoind/mnexcoind.pid
+
+ExecStart=/usr/bin/mnexcoind -daemon -pid=/var/lib/mnexcoind/mnexcoind.pid \
+          -conf=/etc/mnexcoin/mnexcoin.conf -datadir=/var/lib/mnexcoind
+
+ExecStop=-/usr/bin/mnexcoin-cli -conf=/etc/mnexcoin/mnexcoin.conf \
+         -datadir=/var/lib/mnexcoind stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=MNEXcoin
+Comment=MNEXcoin P2P Cryptocurrency
+Comment[fr]=MNEXcoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=MNEXcoin, eşten eşe kriptografik sanal para birimi
+Exec=mnexcoin-qt %u
+Terminal=false
+Type=Application
+Icon=mnexcoin128
+MimeType=x-scheme-handler/mnexcoin;
+Categories=Office;Finance;
